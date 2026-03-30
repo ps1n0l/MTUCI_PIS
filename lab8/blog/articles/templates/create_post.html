@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Создать статью</title>
+        <link rel="stylesheet" href="{% static 'css/create_post.css' %}">
+    </head>
+    <body class="create-page">
+        <div class="header">
+            <img src="{% static 'images/logo.png' %}" alt="Логотип" class="logo">
+        </div>
+        <div class="content">
+            <h1>Написать статью</h1>
+            <form method="POST">{% csrf_token %}
+                <div class="field">
+                    <input type="text" name="title" placeholder="Название статьи" 
+                           value="{{ form.title }}">
+                    {% if form.errors.title %}
+                        <div class="error">{{ form.errors.title }}</div>
+                    {% endif %}
+                    {% if form.errors.title_unique %}
+                        <div class="error">{{ form.errors.title_unique }}</div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <textarea name="text" placeholder="Текст статьи">{{ form.text }}</textarea>
+                    {% if form.errors.text %}
+                        <div class="error">{{ form.errors.text }}</div>
+                    {% endif %}
+                </div>
+                <input type="submit" value="Сохранить">
+            </form>
+        </div>
+    </body>
+</html>

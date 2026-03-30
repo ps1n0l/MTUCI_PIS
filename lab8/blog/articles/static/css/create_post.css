@@ -1,0 +1,70 @@
+/* Общие стили */
+body.create-page {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Логотип */
+.header img {
+    display: block;
+    width: 318px;
+    margin: 20px auto;
+}
+
+/* Контейнер формы */
+.content {
+    width: 600px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Поля формы */
+.field {
+    margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 200px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background: #ffffff;
+    color: #1abc9c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: #f0f0f0;
+}
+
+/* Ошибки */
+.error {
+    color: #ffcccc;
+    font-size: 14px;
+    margin-top: 5px;
+}
