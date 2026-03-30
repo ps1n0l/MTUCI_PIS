@@ -1,0 +1,111 @@
+/* Общие стили страницы */
+body {
+    background: #1abc9c; /* фон страницы */
+    font-family: Tahoma, Arial, sans-serif; /* шрифт */
+    color: #ffffff; /* цвет текста */
+}
+
+/* Логотип */
+.header img {
+    display: block; /* убирает лишние отступы */
+    width: 318px; /* фиксированная ширина */
+    margin-left: auto;
+    margin-right: auto; /* выравнивание по центру */
+}
+
+/* Основной контейнер страниц (архив и статья) */
+.archive, .article {
+    width: 960px; /* ширина контента */
+    margin-left: auto;
+    margin-right: auto; /* центрирование */
+}
+
+/* Ссылка заголовка статьи */
+.post-title a {
+    color: #ffffff; /* белый цвет */
+    text-decoration: none; /* убрать подчёркивание */
+}
+
+/* Эффект при наведении */
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+/* Блок автора */
+.article-author {
+    width: 50%; /* занимает половину строки */
+    float: left; /* выравнивание влево */
+}
+
+/* Блок даты */
+.article-created-date {
+    text-align: right; /* выравнивание вправо */
+}
+
+/* Контейнер для автора и даты */
+.article-info {
+    overflow: hidden; /* фикс для float (чтобы блок не "схлопывался") */
+}
+
+/* Один пост */
+.one-post {
+    margin-bottom: 30px; /* отступ между постами */
+}
+
+/* Заголовок страницы статьи */
+.article h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Повторная настройка для страницы отдельной статьи */
+.article .article-author {
+    width: 50%;
+    float: left;
+}
+
+.article .article-created-date {
+    text-align: right;
+}
+
+.article .article-info {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Текст статьи */
+.article-text {
+    font-size: 18px;
+    line-height: 1.4; /* межстрочный интервал */
+    margin-top: 20px;
+}
+
+/* Кнопка "назад" */
+.back-link {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Улучшение реализации*/
+.one-post.folded .article-author {
+    display: none;
+}
+
+.one-post.folded .article-created-date {
+    display: none;
+}
+
+.one-post.folded .article-text {
+    display: none;
+}
