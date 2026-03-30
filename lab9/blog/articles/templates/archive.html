@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Архив всех статей</title>
+        <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    </head>
+    <body class="archive">
+        <div class="header">
+            <!-- ЛОГОТИП -->
+            <img src="{% static 'images/logo.png' %}" alt="Логотип" class="logo" />
+            <!-- НИЖНИЙ БЛОК -->
+            <div class="header-content">
+                <!-- ЛЕВАЯ ЧАСТЬ -->
+                <div class="header-text-area">
+                    <p class="service-title">Коллективный блог</p>
+                    <div class="auth-links">
+                        <a href="{% url 'register' %}">Регистрация</a>
+                        <a href="{% url 'login' %}">Вход</a>
+                        <a href="{% url 'create_post' %}">Добавить статью</a>
+                    </div>
+                </div>
+                <!-- ПРАВАЯ ЧАСТЬ -->
+                <div class="icons-for-parallax">
+                    <img class="icon-for-parallax-first" src="{% static 'images/article-icon.png' %}">
+                    <img class="icon-for-parallax-second" src="{% static 'images/article-icon.png' %}">
+                    <img class="icon-for-parallax-third" src="{% static 'images/article-icon.png' %}">
+                </div>
+            </div>
+        </div>
+ 
+        <div class="archive">
+            {% for post in posts %}
+            <div class="one-post">
+                <h2 class="post-title">
+                    <a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a>
+                </h2>
+                <button class="fold-button">Свернуть</button>
+                <div class="article-info">
+                    <div class="article-author">{{ post.author.username }}</div>
+                    <div class="article-created-date">{{ post.created_date }}</div>
+                </div>
+                <p class="article-text">{{ post.get_excerpt }}</p>
+                <div class="one-post-shadow"></div> 
+            </div>
+            {% endfor %}
+        </div>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/helloworld.js' %}"></script>
+        <script src="{% static 'js/fold-post.js' %}"></script>
+        <script src="{% static 'js/highlight-post.js' %}"></script>
+        <script src="{% static 'js/parallax.js' %}"></script>            
+    </body>
+</html>

@@ -1,0 +1,216 @@
+/* Общие стили страницы */
+body {
+    background: #0c4614; /* фон страницы */
+    font-family: Tahoma, Arial, sans-serif; /* шрифт */
+    color: #ffffff; /* цвет текста */
+}
+
+/* Логотип */
+.header img {
+    display: block; /* убирает лишние отступы */
+    width: 318px; /* фиксированная ширина */
+    margin-left: auto;
+    margin-right: auto; /* выравнивание по центру */
+}
+
+/* Основной контейнер страниц (архив и статья) */
+.archive, .article {
+    width: 960px; /* ширина контента */
+    margin-left: auto;
+    margin-right: auto; /* центрирование */
+}
+
+/* Ссылка заголовка статьи */
+.post-title a {
+    color: #ffffff; /* белый цвет */
+    text-decoration: none; /* убрать подчёркивание */
+}
+
+/* Эффект при наведении */
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+/* Блок автора */
+.article-author {
+    width: 50%; /* занимает половину строки */
+    float: left; /* выравнивание влево */
+}
+
+/* Блок даты */
+.article-created-date {
+    text-align: right; /* выравнивание вправо */
+}
+
+/* Контейнер для автора и даты */
+.article-info {
+    overflow: hidden; /* фикс для float (чтобы блок не "схлопывался") */
+}
+
+/* Один пост */
+.one-post {
+    margin-bottom: 30px; /* отступ между постами */
+}
+
+/* Заголовок страницы статьи */
+.article h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Повторная настройка для страницы отдельной статьи */
+.article .article-author {
+    width: 50%;
+    float: left;
+}
+
+.article .article-created-date {
+    text-align: right;
+}
+
+.article .article-info {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Текст статьи */
+.article-text {
+    font-size: 18px;
+    line-height: 1.4; /* межстрочный интервал */
+    margin-top: 20px;
+}
+
+/* Кнопка "назад" */
+.back-link {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Улучшение реализации*/
+.one-post.folded .article-author {
+    display: none;
+}
+
+.one-post.folded .article-created-date {
+    display: none;
+}
+
+.one-post.folded .article-text {
+    display: none;
+}
+
+/* Подсветка при наведении*/
+.one-post {
+    position: relative;
+}
+
+.one-post-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+/* Увеличение логотипа при наведении*/
+.logo {
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Стили для параллакса*/
+/* Шапка */
+.header {
+    background: #7dac9c;
+    padding: 20px;
+    position: relative;
+}
+
+/* ЛОГОТИП сверху */
+.logo {
+    display: block;
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+/* Контейнер под логотипом */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* разносит влево/вправо */
+    align-items: flex-start;
+}
+
+/* ЛЕВАЯ часть */
+.header-text-area {
+    width: 50%;
+}
+
+/* Заголовок */
+.service-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Ссылки */
+.auth-links {
+    display: flex;
+    font-weight: bold;
+    gap: 20px;
+}
+
+.auth-links a {
+    color: rgb(15, 10, 10);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* ПРАВАЯ часть */
+.icons-for-parallax {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+/* Общие стили */
+.icons-for-parallax img {
+    position: absolute;
+    top: 0;
+    width: auto;
+    margin-top: auto;
+    margin-left: auto;
+}
+/* эта картинка на переднем плане, у неё больший z-index */
+.icon-for-parallax-first {
+    width: 150px !important;
+    margin-top: 75px !important;
+    z-index: 3;
+}
+
+.icon-for-parallax-second {
+    width: 125px !important; /* уменьшить ширину для картинки, чтобы визуально */
+                  /* находилась дальше для пользователя */
+    margin-top: 45px !important; /* эта картинка слегка смещена вправо и вниз */
+    margin-left: 45px !important;  /* за счет левой и верхней границ */
+    z-index: 2;
+}
+
+.icon-for-parallax-third {
+    width: 100px !important;
+    margin-top: 25px !important;
+    margin-left: 100px!important;
+    z-index: 1;  /* эта картинка на заднем плане, у неё меньший z-index */
+}
